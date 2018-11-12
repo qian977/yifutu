@@ -5,11 +5,11 @@ $(function(){
         $(this).prop({"placeholder":""}).css({"backgroundColor":"#fff","fontSize":18});
     });
     // 请输入手机号
-    $(".phone input").blur(function(){
+    $(".phone input").blur(function(){  
         $(".phone .tips").css({"display":"none"});
         $(this).prop({"placeholder":"请输入手机号"}).css({"backgroundColor":"#fafafa","fontSize":14});
         if($(this).val()==""){
-            $(".phone_tips").fadeIn("slow");
+            $(".phone_tips").fadeIn("slow").css({"right":-190});
             $(".phone_tips span").html("请输入手机号");
         }else{
             let num=/^1[3-8]\d{9}$/;
@@ -21,6 +21,7 @@ $(function(){
             }
         }
     });
+
     // 请输入密码
     $(".password input").blur(function(){
         $(".password .tips").css({"display":"none"});
@@ -56,6 +57,25 @@ $(function(){
             $(".write_tips span").html("请输入短信验证码");
         }
     });
+
+    //点击注册按钮
+    $("#reg").click(function(){
+        let xhr=new XMLHttpRequest();
+        xhr.open("post","php/Reg.php?username="+$(this).val(),true);
+        xhr.onreadystatechange(function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                let str=xhr.responseText;
+                if(str==1){
+                    if(confirm("注册成功！")){
+                        location.href("Login.html");
+                    }
+                }else if(str==0){
+                    alert("服务器出错啦！");
+                }
+            }
+        });
+    });
+    
 
 
 

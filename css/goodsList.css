@@ -1,0 +1,122 @@
+
+
+/* content */
+.content{
+    width:100%;
+    background: plum;
+}
+.content h3{
+    width:1180px;
+    height: 22px;
+    margin:30px auto 30px;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #666666;
+    background: url(../img/ss.jpg) no-repeat 0 center;
+    padding-left: 30px;
+}
+.goodslist{
+    width:1180px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.goodslist li{
+    width:380px;
+    background: #fafafa;
+    float: left;
+}
+.goodslist li:nth-of-type(2){
+    margin:0 20px;
+}
+.goodslist li img{
+    width:380px;
+    cursor: pointer;
+}
+.goodslist li p{
+    line-height: 20px;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
+    padding: 25px 10px 25px 15px;
+}
+.goodslist li p a{
+    color:#333;
+    float: left;
+    width: 210px;
+    padding-right: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.goodslist li p a:hover{
+    color:#f60;
+}
+.goodslist li p span{
+    font-size: 24px;
+    color:#f60;
+}
+.goodslist li p i{
+    font-style: normal;
+    color:#a69999;
+}
+
+.goodslist li{
+    width:280px;
+}
+.goodslist li img{
+    width:280px;
+}
+.goodslist li a{
+    width:124px;
+}
+.goodslist li:nth-of-type(4n){
+    margin-left:20px;
+}
+
+/* .f3 .content_con li{
+    width:280px;
+}
+.f3 .content_con li img{
+    width:280px;
+}
+.f3 .content_con li a{
+    width:124px;
+}
+.f3 .content_con li:nth-of-type(4n){
+    margin-left:20px;
+}
+
+.f1 .content_con{
+    height:358px;
+    overflow:visible;
+}
+.f1 ul{
+    height:358px;
+}
+.f1 ul li{
+    height:358px;
+    position: relative;
+}
+.f1 li div{
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+
+.ff .content_con{
+    height:283px;
+    overflow:visible;
+}
+.ff ul{
+    height:283px;
+}
+.ff ul li{
+    height:283px;
+    position: relative;
+}
+.ff li div{
+    position: absolute;
+    left:0px;
+    top:0px;
+} */
