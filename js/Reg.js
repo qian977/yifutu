@@ -58,27 +58,9 @@ $(function(){
         }
     });
 
-    //点击注册按钮
-    $("#reg").click(function(){
-        let xhr=new XMLHttpRequest();
-        xhr.open("post","php/Reg.php?username="+$(this).val(),true);
-        xhr.onreadystatechange(function(){
-            if(xhr.readyState==4 && xhr.status==200){
-                let str=xhr.responseText;
-                if(str==1){
-                    if(confirm("注册成功！")){
-                        location.href("Login.html");
-                    }
-                }else if(str==0){
-                    alert("服务器出错啦！");
-                }
-            }
-        });
-    });
+    
     
 
 
-
-
-
 });
+

@@ -24,21 +24,31 @@
             </p>
 
             <div class="box_con">
-                <div  class="phone">
+                <div class="phone" id="phone">
                     <i></i>
-                    <input type="text" placeholder="请输入手机/邮箱/用户名"/>
+                    <input name="username" class="username" id="username" type="text" placeholder="请输入手机/邮箱/用户名"/>
+                    <p class="tips phone_tips" id="phone_tips">
+                        <span id="place_Span">请输入账号</span>
+                        <em></em>
+                    </p>
                 </div>
-                <div class="password">
+
+                <div class="password" id="password">
                     <i></i>
-                    <input type="text" placeholder="请输入密码"/>
+                    <input name="passname" class="passname" id="passname" type="password" placeholder="请输入密码"/>
+                    <p class="tips password_tips">
+                        <span>请输入密码</span>
+                        <em></em>
+                    </p>
                 </div>
+
 
                 <div class="pro">
                     <input type="checkbox" checked/>
                     <p>7天内自动登录</p>
                     <a class="last" href="">忘记密码？</a>
                 </div>
-                <input id="sign" type="button" value="登&nbsp;&nbsp;录"/>
+                <button id="sign">登&nbsp;&nbsp;录</button>
                 
             </div>
           
@@ -51,9 +61,9 @@
             
             <div class="signIn"  id="signIn">
                 <p>还没有一幅图账号？</p>
-                <input type="button" value="注 册"/>
+                <input id="reg" type="button" value="注 册"/>
             </div>
-        </div> 
+        </div>
         
         
     </div>
@@ -61,3 +71,44 @@
 </div>
 </body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript" src="js/Login.js"></script>
+<script src="js/Cookie.js"></script>
+<script>
+    function func(str){
+        if(str==1){
+            if(confirm("登录成功！")){
+                location.href="index.html";
+                let setcook=setCookie("username",z("#username").value,3);
+            }
+        }else if(str==-1){
+            alert("您输入的账号或密码不正确");
+        }else if(str==0){
+            alert("该用户还没有注册，快去注册吧！");
+        }
+    }
+window.onload=function(){
+
+    //点击登录按钮   
+    z("#sign").onclick=function(){
+   
+        if(z("#username").value==""){
+            if(z("#passname").value==""){
+                return;
+            }
+        }else{
+            let str="username="+z("#username").value+"&passname="+z("#passname").value;
+            ajax("post","php/Login.php",str,true,func);
+        }   
+        
+    };
+
+    //点击注册按钮
+    z("#reg").onclick=function(){
+        location.href="Reg.html";
+    }
+
+}
+   </script>

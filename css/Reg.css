@@ -250,6 +250,9 @@ ul,li{
     height:42px;
     line-height: 42px;
     background: #3da0fe;
+    border:1px solid #cccccc;
+    outline: none;
+    border-radius: 7px;
     font-size: 20px;
     color: #fff;
     text-align: center;
@@ -288,6 +291,7 @@ ul,li{
     margin-top: 10px;
     border: #ccc 1px solid;
     text-indent: 0;
+    cursor: pointer;
 }
 .signIn input:hover{
     background: #ccc;

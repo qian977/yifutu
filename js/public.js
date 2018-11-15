@@ -41,6 +41,14 @@ $(function(){
         $(this).css({"background":"#f4f4f4","height":"37","border":"1px solid transparent","border-bottom":"none"});
             $(".shopcar .cont").stop().animate({"height":"0"},200).css({"display":"none"});
     });
+
+    $(".shopcar").click(function(){
+        if(getcook!=null){
+            location.href="shopcart.html";
+        }else{
+            alert("您还没有登录哦，先去登录吧！");
+        }
+    });
     
     //tit 点击
     let $nof=0;
@@ -128,6 +136,11 @@ $(function(){
         }
     );
 
+     //跳转到商品列表
+    $(".ul_div").click(function(){
+        location.href="goodsList.html";
+    });
+
     //fix
     $(".a_div").css({"display":"none"});
     $(".fix_a").hover(
@@ -141,6 +154,19 @@ $(function(){
         }
     );
 
+    
+    //免登录
+    let getcook=getCookie("username");
+
+    if(getcook!=null){
+        $(".conR li:first-of-type").html(getcook+" <a id='out' href='javascript:;'>退出</a>").css({"color":"#29b0ea"});
+        $("#out").css({"paddingLeft":0}).click(function(){
+            setCookie("username","aa",-1);
+            location.href="index.html";
+        });
+    }
+
+    
 
 
 });
